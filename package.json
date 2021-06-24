@@ -1,24 +1,42 @@
 {
+  "name": "preact-snowpack-ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dyoung2019/preact-snowpack-ts.git"
+  },
+  "homepage": "https://dyoung2019.github.io/preact-snowpack-ts",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx}\""
+    "lint": "prettier --check \"src/**/*.{js,jsx}\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "dependencies": {
     "preact": "^10.5.13"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
     "@prefresh/snowpack": "^3.0.0",
     "@snowpack/plugin-dotenv": "^2.1.0",
     "@snowpack/plugin-typescript": "^1.2.1",
     "@snowpack/web-test-runner-plugin": "^0.2.2",
+    "@storybook/addon-actions": "^6.3.0",
+    "@storybook/addon-essentials": "^6.3.0",
+    "@storybook/addon-links": "^6.3.0",
+    "@storybook/preact": "^6.3.0",
     "@testing-library/preact": "^2.0.1",
     "@types/chai": "^4.2.17",
     "@types/mocha": "^8.2.2",
     "@web/test-runner": "^0.13.3",
+    "babel-loader": "^8.2.2",
     "chai": "^4.3.4",
+    "core-js": "^3.15.1",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.2.1",
     "snowpack": "^3.3.7",
     "typescript": "^4.2.4"
